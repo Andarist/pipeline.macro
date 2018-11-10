@@ -1,6 +1,6 @@
 {
   "name": "pipeline.macro",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "🎣 A babel macro which works similarly to the pipeline operator.",
   "main": "./dist/pipeline.macro.js",
   "files": [

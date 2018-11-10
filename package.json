@@ -1,0 +1,56 @@
+{
+  "name": "pipeline.macro",
+  "version": "0.0.0",
+  "description": "🎣 A babel macro which works similarly to the pipeline operator.",
+  "main": "./dist/pipeline.macro.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "self-link": "npm link && npm link $npm_package_name",
+    "pretest": "if [ ! -d ./node_modules/$npm_package_name ]; then npm run self-link; else npm run build; fi",
+    "test": "jest --env=node",
+    "precommit": "lint-staged",
+    "prebuild": "rimraf dist",
+    "build": "rollup -c",
+    "preversion": "npm test",
+    "prepare": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Andarist/pipeline.macro.git"
+  },
+  "keywords": [
+    "babel-plugin-macros",
+    "pipe",
+    "pipeline",
+    "composition"
+  ],
+  "author": "Mateusz Burzyński <mateuszburzynski@gmail.com> (https://github.com/Andarist)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Andarist/pipeline.macro/issues"
+  },
+  "homepage": "https://github.com/Andarist/pipeline.macro#readme",
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-transform-modules-commonjs": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "callbag-filter": "^1.0.1",
+    "callbag-for-each": "^1.1.0",
+    "callbag-from-iter": "^1.2.0",
+    "callbag-map": "^1.0.1",
+    "husky": "^0.14.3",
+    "jest": "^23.6.0",
+    "lint-staged": "^7.0.0",
+    "prettier": "^1.11.1",
+    "rimraf": "^2.6.2",
+    "rollup": "^0.66.6",
+    "rollup-plugin-babel": "^4.0.3",
+    "rollup-plugin-json": "^3.1.0"
+  },
+  "dependencies": {
+    "babel-plugin-macros": "^2.0.0"
+  }
+}

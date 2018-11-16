@@ -7,8 +7,7 @@
     "dist"
   ],
   "scripts": {
-    "self-link": "npm link && npm link $npm_package_name",
-    "pretest": "if [ ! -d ./node_modules/$npm_package_name ]; then npm run self-link; else npm run build; fi",
+    "pretest": "npm-self-link && npm run build",
     "test": "jest --env=node",
     "precommit": "lint-staged",
     "prebuild": "rimraf dist",
@@ -44,6 +43,7 @@
     "husky": "^0.14.3",
     "jest": "^23.6.0",
     "lint-staged": "^7.0.0",
+    "npm-self-link": "^1.1.5",
     "prettier": "^1.11.1",
     "rimraf": "^2.6.2",
     "rollup": "^0.66.6",

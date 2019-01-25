@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "🎣 A babel macro which works similarly to the pipeline operator.",
   "main": "./dist/pipeline.macro.js",
+  "types": "./index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "*.d.ts"
   ],
   "scripts": {
     "pretest": "npm-self-link && npm run build",
